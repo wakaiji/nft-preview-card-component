@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: hsl(217, 54%, 11%);
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 300px;
+      background-color: hsl(216, 50%, 16%);
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
+
+    .card-image{
+      position:relative;
+      width: 100%;
+    }
+
+    .card-image::after {
+      --aqua: hsla(178, 100%, 50%, 0.5);
+
+      content: url(./images/icon-view.svg);
+      background: var(--aqua);
+      position:absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.25s ease;
+    }
+
+    .card-image:hover::after {
+      opacity: 1;
+    }
+
+    .card-image img {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    .overlay {
+      transition: .5s ease;
+      opacity: 0;
+      position:absolute;
+      top: 80%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center
+    }
+
+    .text {
+      background-color: #04AA6D;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+    .card-title {
+      padding: 20px 0;
+    }
+
+    .card-title a{
+      color: hsl(0, 0%, 100%);
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    p {
+      color: hsl(215, 51%, 70%);
+    }
+
+    .price-time-description {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+    }
+
+    .price object {
+      margin-right: 8px;
+    }
+
+    .price p {
+      font-weight: bold;
+      color: hsl(178, 100%, 50%);
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+    }
+
+    .time object {
+      margin-right: 8px;
+    }
+
+    .user-creation {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid hsl(215, 32%, 27%);
+      padding: 1rem 0;
+    }
+
+    .user-creation img{
+      width: 30px;
+      height: 30px;
+      border: 1px solid hsl(0, 0%, 100%);
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .user-creation a {
+      color: hsl(0, 0%, 100%);
+    }
+
+    .card-title a:hover, .user-creation a:hover {
+      color:hsl(178, 100%, 50%);
+    }
+
+    .card-image:hover img {
+      opacity: 0.3;
+    }
+
+    .card-image:hover .overlay {
+      opacity: 1;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <a href="">
+        <div class="card-image">
+          <img src="./images/image-equilibrium.jpg" alt="">
+        </div>
+      </a>
+      
+      <div class="card-title">
+        <a href="">Equilibrium #3429</a>
+      </div>
+      <div class="card-description">
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="price-time-description">
+          <div class="price">
+            <object data="./images/icon-ethereum.svg"></object>
+            <p>0.041 ETH</p>
+          </div>
+          <div class="time">
+            <object data="./images/icon-clock.svg"></object>
+            <p>3 days left</p>
+          </div>
+        </div>
+      </div>
+      <div class="user-creation">
+        <img src="./images/image-avatar.png" alt="">
+        <p>Creation of <a href="">Jules Wyvern</a></p> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Equilibrium #3429
+
+  Our Equilibrium collection promotes balance and calm.
+
+  0.041 ETH
+  3 days left
+  
+  Creation of Jules Wyvern
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
